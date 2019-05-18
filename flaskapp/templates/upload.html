@@ -1,9 +1,102 @@
-<html>
-   <body>
-      <form action = "http://localhost:5000/uploader" method = "POST" 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="cache-control" content="max-age=0" />
+    <meta http-equiv="cache-control" content="no-store" />
+    <meta http-equiv="expires" content="-1" />
+    <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <title>Title</title>
+    <style>
+
+        .wrapper {
+            height: 800px;
+            position: relative;
+        }
+
+        .container {
+            margin: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+        }
+
+        .title {
+            text-align: center;
+            font-size: 30px;
+            padding: 10px;
+        }
+        .my-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .no-display {
+            width: 0.1px;
+            height: 0.1px;
+            opacity: 0;
+            overflow: hidden;
+            position: absolute;
+            z-index: -1;
+        }
+
+        .my-file {
+            padding: 10px;
+            border: 1px solid #80e5ff;
+            width: 150px;
+            text-align: center;
+            color: #008fb3;
+	    background-color: #99ff99;
+            margin: 10px;
+        }
+
+        .my-file:hover {
+            background-color: #ffd480;
+            cursor: pointer;
+        }
+
+        .my-file:active {
+            background-color: #aaa;
+        }
+
+        .my-submit {
+            padding: 10px;
+            background-color: #99ff99;
+            width: 150px;
+            text-align: center;
+            color: #008fb3;
+            margin: 10px;
+        }
+
+        .my-submit:hover {
+            background-color: #ffd480;
+            cursor: pointer;
+        }
+
+        .my-submit:active {
+            background-color: black;
+        }
+
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <div class="container">
+        <div class="title">
+            miyazaki films classifier!
+        </div>
+	<br>
+        <form class="my-form" action = "http://localhost:5000/result" method = "POST" 
          enctype = "multipart/form-data">
-         <input type = "file" name = "file" />
-         <input type = "submit"/>
-      </form>
-   </body>
+            <input class="no-display" id="file" type="file" name="file"/>
+            <label class="my-file" for="file"> Choose a picture </label>
+            <input class="no-display" id="submit" type="submit" />
+            <label class="my-submit" for="submit" type="submit"> Submit! </label>
+        </form>
+    </div>
+</div>
+</body>
 </html>
